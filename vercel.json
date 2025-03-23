@@ -1,13 +1,24 @@
 {
   "version": 2,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/frontend/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).(html|js|css)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
   "buildCommand": "cd packages/frontend && npm install && npm run build",
   "outputDirectory": "packages/frontend/dist",
   "installCommand": "npm install",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "regions": ["icn1"]
 }
