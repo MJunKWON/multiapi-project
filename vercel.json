@@ -1,21 +1,13 @@
 {
   "version": 2,
+  "framework": "vite",
   "buildCommand": "cd packages/frontend && npm install && npm run build",
   "outputDirectory": "packages/frontend/dist",
   "installCommand": "cd packages/frontend && npm install",
-  "builds": [
+  "rewrites": [
     {
-      "src": "packages/frontend/package.json",
-      "use": "@vercel/node"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/packages/frontend/$1"
-    }
-  ],
-  "env": {
-    "VITE_SUPABASE_URL": "https://rlrznrjbvbzfxnavvynb.supabase.co"
-  }
+  ]
 }
