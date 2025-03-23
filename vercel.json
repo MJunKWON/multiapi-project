@@ -3,12 +3,18 @@
   "buildCommand": "npm run build",
   "outputDirectory": "packages/frontend/dist",
   "installCommand": "npm install",
-  "framework": "vite",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
-  "regions": ["icn1"]
+  "regions": ["icn1"],
+  "builds": [
+    {
+      "src": "packages/frontend/package.json",
+      "use": "@vercel/static-build"
+    }
+  ]
 }
