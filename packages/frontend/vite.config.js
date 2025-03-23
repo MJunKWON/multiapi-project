@@ -7,7 +7,7 @@ export default defineConfig({
   root: resolve(__dirname),
   base: './',
   build: {
-    outDir: resolve(__dirname, 'dist'),
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -17,7 +17,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': resolve(__dirname, './src')
     }
   },
   server: {
