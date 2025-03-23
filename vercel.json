@@ -1,16 +1,17 @@
 {
   "version": 2,
-  "github": {
-    "enabled": true,
-    "silent": true
-  },
+  "framework": "vite",
   "buildCommand": "cd packages/frontend && npm install && npm run build",
   "outputDirectory": "packages/frontend/dist",
-  "framework": "vite",
+  "installCommand": "cd packages/frontend && npm install",
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "github": {
+    "enabled": true,
+    "silent": true
+  }
 }
