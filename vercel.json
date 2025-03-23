@@ -3,7 +3,6 @@
   "framework": "vite",
   "buildCommand": "cd packages/frontend && npm install && npm run build",
   "outputDirectory": "packages/frontend/dist",
-  "installCommand": "cd packages/frontend && npm install",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -13,5 +12,16 @@
   "github": {
     "enabled": true,
     "silent": true
-  }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
 }
