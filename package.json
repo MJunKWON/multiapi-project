@@ -6,8 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=packages/frontend",
-    "build": "cd packages/frontend && npm install && npm run build",
-    "start": "npm run start --workspace=packages/frontend"
+    "dev": "cd packages/frontend && npm run dev",
+    "build": "cd packages/frontend && npm run build",
+    "start": "cd packages/frontend && npm run start"
   }
 }
