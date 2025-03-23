@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "cd packages/frontend && npm install && npm run build",
+  "outputDirectory": "packages/frontend/dist",
+  "installCommand": "cd packages/frontend && npm install",
+  "builds": [
+    {
+      "src": "packages/frontend/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/frontend/$1"
+    }
+  ],
+  "env": {
+    "VITE_SUPABASE_URL": "https://rlrznrjbvbzfxnavvynb.supabase.co"
+  }
+}
