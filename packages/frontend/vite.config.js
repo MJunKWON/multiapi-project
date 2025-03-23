@@ -10,10 +10,14 @@ export default defineConfig({
       output: {
         manualChunks: undefined
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000
   },
   server: {
     host: true,
+    port: 3000
+  },
+  preview: {
     port: 3000
   }
 })
