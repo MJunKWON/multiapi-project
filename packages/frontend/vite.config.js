@@ -3,13 +3,21 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
+    assetsDir: 'assets',
+    sourcemap: true,
+    minify: 'terser',
   },
   server: {
     port: 3000,
     host: true,
+    strictPort: true,
   },
-  base: './',
+  preview: {
+    port: 3000,
+    host: true,
+    strictPort: true,
+  }
 })
