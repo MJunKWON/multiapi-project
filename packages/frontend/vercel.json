@@ -1,21 +1,8 @@
 {
-  "rewrites": [{ 
-    "source": "/(.*)", 
-    "destination": "/index.html" 
-  }],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, must-revalidate"
-        }
-      ]
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ],
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
-  "regions": ["icn1"]
+  "framework": "vite"
 }
