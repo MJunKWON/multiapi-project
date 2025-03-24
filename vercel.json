@@ -1,8 +1,12 @@
 {
-  "version": 2,
-  "buildCommand": "cd packages/frontend && npm install && npm run build",
+  "framework": "nextjs",
+  "buildCommand": "cd packages/frontend && npm run build",
   "outputDirectory": "packages/frontend/.next",
   "installCommand": "cd packages/frontend && npm install",
-  "framework": "nextjs",
-  "regions": ["icn1"]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
 }
