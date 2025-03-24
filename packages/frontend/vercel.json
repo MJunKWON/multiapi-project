@@ -1,10 +1,15 @@
 {
+  "framework": "nextjs",
+  "buildCommand": "cd packages/frontend && npm run build",
+  "outputDirectory": "packages/frontend/.next",
+  "installCommand": "cd packages/frontend && npm install",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/api/$1"
+    }
   ],
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "outputDirectory": "dist",
-  "framework": "vite",
-  "rootDirectory": "packages/frontend"
+  "env": {
+    "NEXT_PUBLIC_BACKEND_API_URL": "https://your-backend-url.com"
+  }
 }
